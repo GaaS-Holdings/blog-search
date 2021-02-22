@@ -1,24 +1,9 @@
-# README
+# Blog Search
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## To run the application:
+1. Clone repository.
+2. Open project folder.
+3. Download database dump by the [link](https://www.dropbox.com/sh/cdrfv1pki506t38/AADRvZX_8cQRhPZd8qEcNAeha?dl=0&preview=dump-v2.psql). Rename to `dump.psql` and put into `db` folder.
+3. Run `docker-compose build`.
+4. Run `docker-compose run --rm app bin/setup`.
+5. Run `docker-compose up`.
