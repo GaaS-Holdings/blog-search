@@ -7,3 +7,7 @@
 3. Run `docker-compose build`.
 4. Run `docker-compose run --rm app bin/setup`.
 5. Run `docker-compose up`.
+6. Run `docker ps` to get the name of postgres container
+7. Run `docker inspect -f '{{ json .Mounts }}' <container_id> | python -m json.tool` to get the volume path
+8. Run `docker cp </path/to/dump/in/host> <container_name>:<path_to_volume>` to copy dump to container volume
+9. Run `docker exec <container_name> pg_restore -U postgres -d blog_search_development <path_to_volume>/</path/to/dump/in/host>`
