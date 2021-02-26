@@ -4,7 +4,7 @@ end
 
 def db_name
   config = Rails.configuration.database_configuration[Rails.env]
-  "postgresql://#{config['username']}:#{config['password']}@127.0.0.1:5432/#{config['database']}"
+  "#{config['url']}/#{config['database']}"
 end
 
 task :db_dump do
@@ -12,5 +12,5 @@ task :db_dump do
 end
 
 task :db_load do
-  system "pg_restore --clean --no-owner --dbname=#{db_name} #{dump_path}"
+  system "pg_restore --no-owner --dbname=#{db_name} #{dump_path}"
 end
